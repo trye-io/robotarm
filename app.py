@@ -14,7 +14,7 @@ screen = pygame.display.set_mode((1080, 720))
 gripper_position = 1500
 yaw_position = 1500
 up_down_position = 1500
-forward_backward_postion = 1500
+forward_backward_position = 1500
 
 is_left_pressed = False
 is_right_pressed = False
@@ -75,13 +75,13 @@ while is_running:
     if is_right_pressed:
         yaw_position += 5
     if is_up_pressed:
-        up_down_position -= 5
-    if is_down_pressed:
         up_down_position += 5
+    if is_down_pressed:
+        up_down_position -= 5
     if is_w_pressed:
-        forward_backward_postion -= 5
+        forward_backward_position += 5
     if is_s_pressed:
-        forward_backward_postion += 5
+        forward_backward_position -= 5
     if is_a_pressed:
         gripper_position -= 5
     if is_d_pressed:
@@ -90,7 +90,7 @@ while is_running:
     pwm.setServoPulse(0, clamp(gripper_position))
     pwm.setServoPulse(1, clamp(yaw_position))
     pwm.setServoPulse(2, clamp(up_down_position))
-    pwm.setServoPulse(3, clamp(forward_backward_postion))
+    pwm.setServoPulse(3, clamp(forward_backward_position))
 
     clock.tick(FPS)
     
