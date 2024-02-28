@@ -11,7 +11,7 @@ clock = pygame.time.Clock()
 
 screen = pygame.display.set_mode((1080, 720))
 
-claws_position = 1500
+gripper_position = 1500
 yaw_position = 1500
 up_down_position = 1500
 forward_backward_postion = 1500
@@ -83,11 +83,11 @@ while is_running:
     if is_s_pressed:
         forward_backward_postion += 5
     if is_a_pressed:
-        claws_position -= 5
+        gripper_position -= 5
     if is_d_pressed:
-        claws_position += 5
+        gripper_position += 5
     
-    pwm.setServoPulse(0, clamp(claws_position))
+    pwm.setServoPulse(0, clamp(gripper_position))
     pwm.setServoPulse(1, clamp(yaw_position))
     pwm.setServoPulse(2, clamp(up_down_position))
     pwm.setServoPulse(3, clamp(forward_backward_postion))
