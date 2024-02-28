@@ -11,10 +11,10 @@ clock = pygame.time.Clock()
 
 screen = pygame.display.set_mode((1080, 720))
 
-claws_position = 1000
-yaw_position = 1000
-up_down_position = 1000
-forward_backward_postion = 1000
+claws_position = 1500
+yaw_position = 1500
+up_down_position = 1500
+forward_backward_postion = 1500
 
 is_left_pressed = False
 is_right_pressed = False
